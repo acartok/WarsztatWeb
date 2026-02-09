@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warsztat World TXT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo-section {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+        }
+
+        .title {
+            font-size: 2.5em;
+            color: #d4a574;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 600;
+        }
+
+        .buttons-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .nav-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 25px;
+            background: #3d2a1f;
+            color: #e0e0e0;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 400;
+            transition: background 0.2s ease;
+            border: 1px solid #6b4d3a;
+            cursor: pointer;
+        }
+
+        .nav-button:hover {
+            background: #5a3f2e;
+        }
+
+        .nav-button i {
+            font-size: 1.3em;
+            color: #d4a574;
+        }
+
+        .discord-section {
+            margin-bottom: 50px;
+        }
+
+        .discord-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 35px;
+            background: #5865F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.05em;
+            font-weight: 500;
+            transition: background 0.2s ease;
+            border: 1px solid #7289da;
+        }
+
+        .discord-button:hover {
+            background: #7289da;
+        }
+
+        .discord-button i {
+            font-size: 1.4em;
+        }
+
+        .footer {
+            padding: 20px 0;
+            color: #888;
+            font-size: 0.95em;
+            border-top: 1px solid #3d3d3d;
+        }
+
+        .footer p {
+            margin: 5px 0;
+        }
+
+        .author-link {
+            color: #d4a574;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .author-link:hover {
+            color: #e6c299;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+            
+            .nav-button {
+                font-size: 1.1em;
+                padding: 15px 25px;
+            }
+            
+            .logo {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <img src="warsztat.webp" alt="Warsztat Logo" class="logo">
+        </div>
+        
+        <h1 class="title">Warsztat World TXT</h1>
+        
+        <div class="buttons-section">
+            <a href="#" class="nav-button" onclick="downloadFile('/files/world-warsztat-txt-1-21.jar'); return false;">
+                <i class="fa-solid fa-download"></i>
+                <span>World 1.21</span>
+            </a>
+            
+            <a href="#" class="nav-button" onclick="downloadFile('/files/world-warsztat-txt-1-20.jar'); return false;">
+                <i class="fa-solid fa-download"></i>
+                <span>World 1.20</span>
+            </a>
+            
+            <a href="#" class="nav-button" onclick="downloadFile('/files/world-warsztat-txt-1-8-8.jar'); return false;">
+                <i class="fa-solid fa-download"></i>
+                <span>World 1.8.8</span>
+            </a>
+        </div>
+        
+        <div class="discord-section">
+            <a href="https://dc.gg/warsztat" class="discord-button" target="_blank">
+                <i class="fa-brands fa-discord"></i>
+                <span>Dołącz na Discord</span>
+            </a>
+        </div>
+        
+        <footer class="footer">
+            <p>Powered by Stół Warsztatowy</p>
+            <p>Created by <a href="https://acarto.exolyte.pl" target="_blank" class="author-link">Acarto</a> for ❤️</p>
+        </footer>
+    </div>
+
+    <script>
+        function downloadFile(filePath) {
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.download = filePath.split('/').pop(); 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
+</body>
+</html>
